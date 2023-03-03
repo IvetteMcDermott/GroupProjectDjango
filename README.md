@@ -1,108 +1,93 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome IvetteMcDermott,
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+# Basics guide to making your first Pull Request (PR)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+By following the below guide, your actions will have created a card on the Landing page of the project, with some information displayed about you. It's a fun little exercise that gives you the steps to navigate the project and make your first Open Source Contribution to this project (or maybe it is your very first ever!) via Pull Request (PR). 🤜
 
-## Gitpod Reminders
+Get started! Make your first PR and get going into the world of open source! 
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## 👇 Participant steps: 👇
 
-`python3 -m http.server`
+### **1. Project Setup**
+---
+- Fork the repo. Super simple here, go to [the repo](https://github.com/auxfuse/hackathon-git-labs), and click on the "Fork" button in the top right of the screen. The window should then refresh, and you should be redirected to your newly created Fork of the project.
 
-A blue button should appear to click: _Make Public_,
+    🍴 <-- So what is a fork? It's a copy of the original repository. But one that you own. Any changes you make to the project in the fork won't affect the original. To affect the original, continue following the steps below to make a Pull Request! 😉 [Learn more about Forks](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks)
 
-Another blue button should appear to click: _Open Browser_.
+- Go to your preferred IDE/Editor and clone the Forked repo.
+    - Go to the forked repository in Github. This can be found in your account, under "repositories".
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+go to the forked repository and click on the green "Gitpod" Extension button to open the project for editing.
 
-A blue button should appear to click: _Make Public_,
+- Your project should already be opened in your preferred IDE/Editor at this point, but just in case. Open your IDE/Editor, and then open the project. 😀
 
-Another blue button should appear to click: _Open Browser_.
+**N.B**
+---
+**1st STEPS FOR OUR PROJECT**
+Create an env.py file in the root 
+get the info from Ivette or Rachel for database, secret key and cloudinary (Cannot add here for security reasons)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
+In terminal add **pip3 install -r requirements.txt** this adds everything from the requirements into your workspace.
 ---
 
-Happy coding!
+- Before doing any code, lets open a terminal/command line.
+- Set the upstream by running this command `git remote add upstream https://github.com/auxfuse/hackathon-git-labs.git`, in your opened terminal/command line.
+    - We can then check to ensure that the remote has been added correctly by running `git remote -v` in the terminal. And you should get this type of response.
+    ```
+    $ git remote -v
+    origin    https://github.com/YOUR_USERNAME/hackathon-git-labs.git (fetch)
+    origin    https://github.com/YOUR_USERNAME/hackathon-git-labs.git (push)
+    upstream  https://github.com/auxfuse/hackathon-git-labs.git (fetch)
+    upstream  https://github.com/auxfuse/hackathon-git-labs.git (push)
+    ```
+
+    The _"origin"_ in the above snapshot is your Forked repository. The _"upstream"_ is the link we just set so that our newly Forked repository can _**see**_ the original repository and vice-versa. Lots of thought here, and it does take a bit of getting used to! So stick with it. 🤔💭 Basically all we are doing here, is setting up the relationship between the original repository and the fork. 🤝 Without this step, we can't make a Pull Request.
+
+    **N.B**: If you are using Gitpod, and you open the forked repository using Gitpod this step will be done for you by default. But make sure to double check using the `git remote -v` command. 😀
+
+    - Our last step before we jump into the project is to Create a branch.
+    - A branch is another layer of security for us to lean on. It's a diverging path from the main branch that exists by default in every repository. [Learn more about Branches](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches)
+    - Inside your terminal/command line in your IDE/Editor, run this command: `git checkout -b branch-name`, replacing the "branch-name" with something more unique to you.
+    - This command creates a branch, and automatically moves you into that branch 😁.
+    - Lastly, we need to tell Git that this new branch is to be the current **tracked** branch. Back into our terminal, we now run: `git push -u origin branch-name`. 🌿🌳
+
+**_All of the initial git setup is done. All in all, if you follow this to the letter, this is a few minutes of work._ 😅 _Crazy to think of something you do regularly just by muscle memory alone, when viewed in the written word, is quite a lengthy process._ 🤯🧠**
+
+### **3. Git and The Pull Request**
+---
+- Add all your work to the branch using `git add .`, using the terminal/command line in your IDE/Editor. 
+- Commit it using `git commit -m "meaningful commit message here"`.
+- Push your work using `git push`. 👋 And say goodbye to your IDE/Editor for now....because now it's time to go to our Forked Repository in our Github account 💻😁.
+    - At this stage, if you didn't earlier, you might be reminded to set the branch as the current trackable option. In that case just run `git push -u origin branch-name`. 🌿🌳 Don't worry, the terminal is very good and will tell you if it needs to be set or not.
+
+We are almost there!
+
+- Go to the original repo: https://github.com/IvetteMcDermott/GroupProjectDjango 
+- From here, click on the "Pull requests" tab, located in the top navigational menu of the repository.
+
+
+    - As long as you have followed all the steps above to this point, you should see a banner at the top of this screen with a Green Github Button saying "Compare & Pull Request".
+
+    **N.B**: If you do not see this, make sure that you have added, commited, and pushed your work to a branch within your forked repository.
+
+
+- Click on the green button, "Compare & Pull Request" to start the PR process.
+    - You should see the following, and more so you should see the PR Template information in the "Write" tab.
+
+
+- On this screen we have multiple things going on, but the main thing is to follow the template and replace the values with your own.
+- When you are ready, click on "Create pull request". 🎉💥💥🎉
+
+### **4. Closing comments:**
+---
+And Voila! Well done...you've just added your very first Pull Request. So what happens now?
+
+Now, your PR will go through some simple checks and balances, and if all is satisfied it will be approved and merged by one of a few select Maintainers of this repo.
+
+If there is anything wrong, we will notify you back through the PR itself, which you will get notified via email.😉
+
+This is just the start. Get your PR in, wait for it to be reviewed/approved/merged. And then throw your efforts at adding another PR, but this time following along to the [Intermediate Guide](intermediate.md), and making adding a HTML & CSS Single page creation.
+
+🤜 Thank you! 😀
+
+
