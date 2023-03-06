@@ -32,6 +32,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['django-group-project.herokuapp.com', 'localhost']
 
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
 
 # Application definition
 
