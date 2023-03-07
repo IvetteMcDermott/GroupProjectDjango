@@ -1,0 +1,67 @@
+html {
+    height: 100%;
+}
+
+ /* container 1 - top section of website - brown stripe  on base page */
+.container-fluid-1 {
+    background-color: #982920; 
+    height: 70px;
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    right: 0;
+    padding-bottom: 10px;
+}
+
+ /* container 2 -  navigation items & Container 4 description details on base page -  */
+.container-fluid-2, .container-fluid-4 {
+    background-color: #fbebd4;
+}
+
+   /* Container 3 - picture container inserted on  base page  */
+ .container-fluid-3 { 
+    max-width: 100%;
+    background-color: #fbebd4;
+    height: 100%;
+
+}
+   /* Container 5 - footer details inserted on base page  */
+.container-fluid-5 {
+    background-color: #e79e39;
+}
+
+   /* Container 1 navigation sectioin - logo element - SPICE  */
+.logo-font-1 {
+    padding-top: 70px;
+    color:  #982920;
+    font-family: Merriweather;
+}
+   /* Container 1 navigation section - logo element - UP YOUR LIFE  */
+.logo-font-2 {
+    color: #8c6654;
+    font-family: Merriweather;
+}
+
+ /* Container 1 navigation section - Home, Spices, My Account, Sign In and Sign up font color  */
+.nav-link, .dropdown-item-1, .dropdown-item-2 {
+    color: #8c6654;
+    font-family: Merriweather;
+}
+
+ /* Container 4 text section - center text and heading  */
+ .justify-center {
+   text-align: center;
+   font-family: lato regular;
+   font-weight: 400;
+}
+
+
+ /* Container 5 Footer Items style 1 - group title, style 2 follow us, style3 twitter, style 4 instagram, style 5 youtube  */
+.style-1, .style-2, .style-3, .style-4, .style-5 {
+   color:  #8c6654;
+   font-weight: 300;
+   font-family: Merriweather;
+}
+
+
+

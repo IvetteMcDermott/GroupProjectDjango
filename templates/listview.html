@@ -1,16 +1,66 @@
 {% extends "base.html" %} 
+
 {% block content %} 
 
 <div>LIST</div>
-<div>
+<!-- <div>
     <ul>
-        <!-- HERE WHAT WAS SAID IN THE CLASS VIEW -->
+         HERE WHAT WAS SAID IN THE CLASS VIEW
 {% for object in object_list %}
 
 <li>{{ object.name }}</li>
 {{ object.description }}
+{{ object.price }}
+{% if 'placeholder' in object.image.url %}
+<img src='media/database_model.jpg'>
+{% else %}
+<img src='{{ object.image.url }}'>
+{% endif %}
 
 {% endfor %}
 </ul>
+</div> -->
+
+<div class="container-fluid">
+    <div class="row">
+
+        <Blog Entries Column></Blog>
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                {% for object in object_list %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="image-container">
+                                {% if "placeholder" in object.image.url %}
+                                <img class="card-img-top"
+                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                {% else %}
+                                <img class="card-img-top" src="{{ object.image.url }}">
+                                {% endif %}
+                                <div class="image-flash">
+                                    <p class="name">Name: {{ object.name }}</p>
+                                </div>
+                            </div>
+                            <a href="#" class="post-link">
+                                <h2 class="card-title">{{ object.name }}</h2>
+                                <p class="card-text">{{ object.description }}</p>
+                            </a>
+                            <hr />
+                            <p class="card-text text-muted h6">{{ object.date_created}} <i class="far fa-heart"></i>
+                                <!-- {{ spice.number_of_likes }}</p> -->
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+   
 </div>
 {% endblock %}
