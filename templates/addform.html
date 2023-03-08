@@ -1,14 +1,16 @@
 {% extends "base.html" %} 
+{% load crispy_forms_tags %}
 
 {% block content %} 
-
+<div>
 <form method="post" id="addspice"  enctype="multipart/form-data" style="margin-top: 1.3em;">
 
     {% csrf_token %}
-    {{ form }}
+
+    {{ form | crispy }}
 
     <button type="submit">Save</button>
 
 </form>
-
+</div>
 {% endblock %} 
