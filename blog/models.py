@@ -51,3 +51,5 @@ class Comment(models.Model):
                               related_name='comment')
     body = models.TextField(max_length=100)
     date_created = models.DateField(auto_now_add=True)
+    date_updated = models.DateField(auto_now=True)
+
