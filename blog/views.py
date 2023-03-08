@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views import generic, View
 from django.views.generic import CreateView, ListView
 from .models import Spice
+from .forms import AddSpice
 
 
 # Create your views here.
@@ -21,3 +22,11 @@ class ListSpices(ListView):
     model = Spice
     queryset = model.objects.all()
     template_name = 'listview.html'
+
+
+class AddSpice(CreateView):
+    model = Spice
+    form_class = AddSpice
+    template_name = 'addform.html'
+    success_url = '/'
+    success_message = 'You got it'
