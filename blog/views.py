@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.views.generic import CreateView, ListView
+from .forms import AddSpice
 from .models import Spice, TypeCategory
 
 
@@ -36,3 +37,11 @@ class SpiceDetail(View):
                 "post": post,
             },
         )
+
+
+class AddSpice(CreateView):
+    model = Spice
+    form_class = AddSpice
+    template_name = 'addform.html'
+    success_url = '/'
+    success_message = 'You got it'

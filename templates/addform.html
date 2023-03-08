@@ -1,0 +1,14 @@
+{% extends "base.html" %} 
+
+{% block content %} 
+
+<form method="post" id="addspice"  enctype="multipart/form-data" style="margin-top: 1.3em;">
+
+    {% csrf_token %}
+    {{ form }}
+
+    <button type="submit">Save</button>
+
+</form>
+
+{% endblock %} 
