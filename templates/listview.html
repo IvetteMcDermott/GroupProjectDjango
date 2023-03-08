@@ -1,6 +1,6 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 
-{% block content %} 
+{% block content %}
 
 <a href="{% url 'addspice' %}">Add Form</a>
 
@@ -44,6 +44,10 @@
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="name">Name: {{ object.name }}</p>
+
+                                    <a href="{% url 'spice_detail' object.slug %}" class="post-link">
+                                        <h2 class="card-title">{{ object.name }}</h2>
+                                    </a>
                                 </div>
                             </div>
                             <a href="#" class="post-link">
@@ -79,5 +83,6 @@
         </ul>
     </nav>
     {% endif %}
+
 </div>
 {% endblock %}
