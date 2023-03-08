@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <img src="{{ object.image.url }}" alt="" class="card-img-top logo-card img-fluid">
+            <div class="card-body font pt-3">
+                <h1 class="post-title">{{ post.name }}</h1>
+                <p class="post-subtitle">USES: {{ post.use_category }} | SPICE TYPE: {{ post.type_category }}</p>
+            </div>
+        </div>
+        <section>
+
+            <div class="card-body">
+                <div class="card-text">
+                    <h1>{{ post.name }}</h1>
+                    <p>{{ post.discription | safe }}</p>
+                    <p>€{{ post.price | safe }}</p>
+                    <p>{{ post.date_created }}</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</div>
