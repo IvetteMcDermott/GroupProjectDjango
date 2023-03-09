@@ -56,44 +56,50 @@
     <!--Second container with light cream color which holds logo and nav bar. -->
     <div class="container-fluid container-fluid-2">
 
-      <nav class="navbar navbar-expand">
-          <!-- <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-right"> -->
-            <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                <h2 class="logo-font-1 text-black my-0"><strong>SPICE </strong></h2>
-                <h4 class="logo-font-2 text-black my-0 border-bottom border-4 d-inline-block" style="border-color: #e79e39"><strong>UP YOUR LIFE </strong></h4>
-            </a>
-
-            <ul class="navbar-nav ml-auto">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button> 
-             <div class="collapse navbar-collapse" id="navbarSupportedContent"></div> 
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a href="{% url 'home' %}" class="nav-link main-logo-link">
+            <h2 class="logo-font-1 text-black my-0"><strong>SPICE </strong></h2>
+            <h4 class="logo-font-2 text-black my-0 border-bottom border-4 d-inline-block" style="border-color: #e79e39">
+              <strong>UP YOUR LIFE </strong></h4>
+          </a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"><i class="fas fa-bars" style="color: #8c6654;"></i></span>
+          </button>
+          <div class="collapse navbar-collapse align-self-end" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'home' %}">Home</a>
+              </li>
+  
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'listview' %}">Spices</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  My Account
+                </a>
+                <ul class="dropdown-menu">
+                  {% if user.is_authenticated %}
+  
+                  <li><a class="dropdown-item" href="{% url 'account_logout' %}">Sign Out</a></li>
+                  {% else %}
+  
+                  <li><a class="dropdown-item" href="{% url 'account_signup' %}">Sign Up</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="{% url 'account_login' %}">Sign In</a></li>
+                  {% endif %}
+  
+                </ul>
+              </li>
             </ul>
-            <ul class="navbar-nav mr-auto">
-
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Home</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Spices</a>
-                </li>
-
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    My Account
-                  </a>
-                <ul class="dropdown-menu border-0" aria-labelledby="my-account-link">
-                  
-                {% if user.is_authenticated %}
-                  <li><a href="{% url 'account_logout' %}" class="dropdown-item-2">Sign Out</a></li>
-                {% else %}
-                   <li><a href="{% url 'account_signup' %}" class="dropdown-item-1">Sign Up</a></li>
-                  <li><a href="{% url 'account_login' %}" class="dropdown-item-2">Sign In</a></li>
-                {% endif %}
-               </ul>
-          </div> 
-        
+           
+          </div>
+        </div>
       </nav>
     </div>
 
@@ -126,7 +132,7 @@
 
     <!--Container 5  with Footer Details -->
     <div class="container-fluid container-fluid-5">
-    <footer class="footer mt-auto py-3 dark-bg">
+    <footer class="footer mt-auto py-3 dark-bg" style="bottom: 0px;">
         <p class="m-0 text-center style-1">CI Group Project - The Spice Ladies</p>
         <p class="m-0 text-center style-2">Follow us:  
           <a href="http://facebook.com" target="_blank" rel="noopener" aria-label="Visit our Facebook page (opens in new tab)"><i class="fab fa-facebook-square ms-3"></i></a>
