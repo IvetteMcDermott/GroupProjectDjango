@@ -1,23 +1,49 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
 <div class="container">
     <div class="card">
         <div class="card-body">
-            <img src="{{ object.image.url }}" alt="" class="card-img-top logo-card img-fluid">
-            <div class="card-body font pt-3">
-                <h1 class="post-title">{{ post.name }}</h1>
-                <p class="post-subtitle">USES: {{ post.use_category }} | SPICE TYPE: {{ post.type_category }}</p>
+            <div class="container ">
+                <img src="{{ post.image.url }}" alt="" class="card-img-top logo-card img-fluid">
             </div>
-        </div>
-        <section>
+            <div class="card-body">
+                <!-- BOOKMARK -->
+                <h1 class="post-title">{{ post.name }}</h1>
+                <p class="post-subtitle">USES: {{ post.use_category }} SPICE TYPE: {{ post.type_category }}</p>
+            </div>
 
             <div class="card-body">
                 <div class="card-text">
-                    <h1>{{ post.name }}</h1>
-                    <p>{{ post.discription | safe }}</p>
+                    <p>{{ post.description | safe }}</p>
                     <p>€{{ post.price | safe }}</p>
                     <p>{{ post.date_created }}</p>
+                    <!-- BOOKMARK -->
+                    <div class="row">
+                        {% if user.is_authenticated %}
+                        <form action="{% url 'bookmark' post.slug %}" method="POST">
+                            {% csrf_token %}
+                            {% if bookmarked %}
+                            <button class="btn" type="submit" value="{{post.slug}}">
+                                <i class="fa-solid fa-bookmark"></i>
+                            </button>
+                            {% else %}
+                            <button class="btn" type="submit" value="{{post.slug}}">
+                                <i class="fa-regular fa-bookmark"></i>
+                            </button>
+                            {% endif %}
+                        </form>
+                        {% else %}
+                        <i class="fa-regular fa-bookmark"></i>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
-        </section>
+
+        </div>
     </div>
 </div>
-</div>
+
+{% endblock %}
