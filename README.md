@@ -1,3 +1,9 @@
+BUGS FIXED:
+
+My account dropdown not working - can not sign in/out therefore user can not be authenticated:
+- restructured navbar and corrected discrepencies according to bootstrap 5 example - open a tag and data-target => data-bs-target
+
+
 Bugs to be fixed:
 
 bug: Type category must not have none field.
