@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.views.generic import CreateView, ListView
-from .forms import AddSpice
+from .forms import AddSpice, SearchCategory
 from .models import Spice, TypeCategory
 
 
@@ -45,3 +45,32 @@ class AddSpice(CreateView):
     template_name = 'addform.html'
     success_url = '/'
     success_message = 'You got it'
+
+
+def Search(request):
+    model = Spice
+
+    if 'search' in request.POST:
+        search = request.POST.get('search')
+        search_data = Spice.objects.all()
+        search_result = search_data.filter(use_category=search)
+        template = 'search.html'
+
+        context = {
+            'search': search,
+            'object_list': search_result,
+        }
+
+        return render(request, template, context)
+
+
+# class Search(ListView):
+#     model = Spice
+#     template_name = 'search.html'
+
+#     def get_queryset(self):
+#         search = self.request.GET.get('search')
+#         search_result = Spice.objects.all().filter(self.use_category == search)
+#         print(search_result)
+#         print(search)
+#         return search_result

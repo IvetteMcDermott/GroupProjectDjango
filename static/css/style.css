@@ -43,7 +43,7 @@ html {
 }
 
  /* Container 1 navigation section - Home, Spices, My Account, Sign In and Sign up font color  */
-.nav-link, .dropdown-item-1, .dropdown-item-2 {
+.nav-link, .dropdown-item-1, .dropdown-item-2, .fa-bars {
     color: #8c6654;
     font-family: Merriweather;
 }
