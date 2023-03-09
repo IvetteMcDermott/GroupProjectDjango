@@ -16,3 +16,9 @@ class SearchCategory(forms.ModelForm):
     class Meta:
         model = Spice
         fields = ('use_category',)
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ('body',)

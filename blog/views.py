@@ -33,6 +33,15 @@ class SpiceDetail(View):
         bookmarked = False
         if post.bookmark.filter(id=self.request.user.id).exists():
             bookmarked = True
+        comments = post.comments.filter.order_by("-created_on")
+
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            comment_form.instance.name = request.user.username
+            comment = comment_form.save(commit=True)
+            comment.post = post
+            comment_form = CommentForm()
+            comment.save()
 
         return render(
             request,
@@ -40,6 +49,8 @@ class SpiceDetail(View):
             {
                 "post": post,
                 "bookmarked": bookmarked,
+                "comments": comments,
+                "comment_form": comment_form,
             },
         )
 

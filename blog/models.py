@@ -52,4 +52,3 @@ class Comment(models.Model):
     body = models.TextField(max_length=100)
     date_created = models.DateField(auto_now_add=True)
     date_updated = models.DateField(auto_now=True)
-
