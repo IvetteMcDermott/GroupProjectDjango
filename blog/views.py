@@ -1,6 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.views.generic import CreateView, ListView
+from django.http import HttpResponseRedirect
 from .forms import AddSpice, SearchCategory
 from .models import Spice, TypeCategory
 
@@ -29,14 +30,32 @@ class SpiceDetail(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Spice.objects.all()
         post = get_object_or_404(queryset, slug=slug)
+        bookmarked = False
+        if post.bookmark.filter(id=self.request.user.id).exists():
+            bookmarked = True
 
         return render(
             request,
             "spice_detail.html",
             {
                 "post": post,
+                "bookmarked": bookmarked,
             },
         )
+
+
+# Bookmark a spice post
+class Bookmark(View):
+
+    def post(self, request, slug):
+        # gets relevant post
+        post = get_object_or_404(Spice, slug=slug)
+        if post.bookmark.filter(id=request.user.id).exists():
+            post.bookmark.remove(request.user)
+        else:
+            post.bookmark.add(request.user)
+
+        return HttpResponseRedirect(reverse('spice_detail', args=[slug]))
 
 
 class AddSpice(CreateView):

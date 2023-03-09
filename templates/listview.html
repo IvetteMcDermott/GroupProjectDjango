@@ -46,8 +46,17 @@
                                 <p class="card-text">{{ object.description }}</p>
                             </a>
                             <hr />
-                            <p class="card-text text-muted h6">{{ object.date_created}} <i class="far fa-heart"></i>
-                                <!-- {{ spice.number_of_likes }}</p> -->
+                            <p class="card-text text-muted h6">{{ object.date_created}} </p>
+
+                            <!-- SHOWS IF USER HAS BOOKMARKED -->
+                            <div>
+                                {% if request.user in post.bookmark.all %}
+                                <i class="fa-solid fa-bookmark"></i>
+                                {% else %}
+                                <i class="fa-regular fa-bookmark"></i>
+                                {% endif %}
+                            </div>
+
                         </div>
                     </div>
                 </div>
